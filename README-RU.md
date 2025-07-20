@@ -45,7 +45,7 @@ docker compose build
 ### 2. Авторизация в Telegram (однократная настройка)
 
 ```bash
-docker compose run --rm Auto-Gift-Buyer-Telegram
+docker compose run --rm auto-gift-buyer-telegram
 ```
 
 Следуйте инструкциям для входа в Telegram. Сессия будет сохранена в папке `./data/`.
