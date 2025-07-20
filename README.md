@@ -20,8 +20,8 @@ management.
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/bohd4nx/Gifts-Buyer.git
-cd Gifts-Buyer
+git clone https://github.com/vityooook/Auto-Gift-Buyer-Telegram.git
+cd Auto-Gift-Buyer-Telegram
 pip install -r requirements.txt
 ```
 
@@ -44,7 +44,7 @@ docker compose build
 ### 2. Run the container for Telegram login (one-time setup)
 
 ```bash
-docker compose run --rm gift-buyer
+docker compose run --rm Auto-Gift-Buyer-Telegram
 ```
 
 Follow the prompts to complete Telegram authorization. Your session will be saved in the `./data/` directory.
@@ -138,5 +138,12 @@ Example:
 ---
 
 <div align="center">
-    <h4>🚀 Built with ❤️ by <a href="https://t.me/bohd4nx">Bohdan</a> • <a href="https://app.tonkeeper.com/transfer/UQBUAa7KCx1ifmoEy6lF7j-822Dm_cE1j9SR7UWteu3jzukV?amount=0&text=Thanks%20for%20Gifts-Buyer">Donate</a></h4>
+    <h4>Dev <a href="https://t.me/vityooook">vityooook</a></h4>
 </div>
+
+
+
+#️⃣ Tags
+
+`telegram-gift-auto-bot`  `telegram-gift-bot`  `telegram-premium-bot`  `telegram-userbot`  `telegram-auto-buyer`  
+`auto-gift-sender`  `telethon-bot`  `tg-bot`  `telegram-api`  `gift-automation`  `telegram-tools`

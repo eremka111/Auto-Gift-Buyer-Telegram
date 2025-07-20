@@ -20,8 +20,8 @@
 ## 🚀 Установка
 
 ```bash
-git clone https://github.com/bohd4nx/Gifts-Buyer.git
-cd Gifts-Buyer
+git clone https://github.com/vityooook/Auto-Gift-Buyer-Telegram.git
+cd Auto-Gift-Buyer-Telegram
 pip install -r requirements.txt
 ```
 
@@ -45,7 +45,7 @@ docker compose build
 ### 2. Авторизация в Telegram (однократная настройка)
 
 ```bash
-docker compose run --rm gift-buyer
+docker compose run --rm Auto-Gift-Buyer-Telegram
 ```
 
 Следуйте инструкциям для входа в Telegram. Сессия будет сохранена в папке `./data/`.
@@ -139,5 +139,5 @@ PRIORITIZE_LOW_SUPPLY = True           # Приоритет редким под�
 ---
 
 <div align="center">
-    <h4>🚀 Built with ❤️ by <a href="https://t.me/bohd4nx">Bohdan</a> • <a href="https://app.tonkeeper.com/transfer/UQBUAa7KCx1ifmoEy6lF7j-822Dm_cE1j9SR7UWteu3jzukV?amount=0&text=Thanks%20for%20Gifts-Buyer">Donate</a></h4>
+    <h4>🚀 Dev <a href="https://t.me/vityoook">vityooook</a></h4>
 </div>
