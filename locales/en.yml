@@ -22,6 +22,13 @@ telegram:
     💡 Gifts outside the specified criteria will be automatically skipped
 
     Dev: @vityooook
+  daily_heartbeat: |
+    <b>💚 Bot is active and running</b>
+
+    <b>Date:</b> <code>%{date}</code>
+    <b>Balance:</b> <code>%{balance} ⭐</code>
+
+    🔄 Gift monitoring continues...
   peer_id_error: |
     <b>❗Error while sending gift!</b>
 
