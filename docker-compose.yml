@@ -1,7 +1,7 @@
 services:
   gift-buyer:
     build: .
-    container_name: gift-buyer
+    container_name: auto-gift-buyer-telegram
     restart: always
     volumes:
       - ./data:/app/data

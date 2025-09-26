@@ -5,7 +5,7 @@ from typing import Any, Callable, Dict, List, Tuple
 
 from pyrogram import Client, types
 
-from app.notifications import send_summary_message
+from app.notifications import send_summary_message, send_daily_heartbeat, DailyScheduler
 from app.utils.logger import log_same_line, info
 from data.config import config, t
 
@@ -56,8 +56,12 @@ class GiftDetector:
 
 
 class GiftMonitor:
+    def __init__(self):
+        self.scheduler = DailyScheduler()
+
     @staticmethod
     async def run_detection_loop(app: Client, callback: Callable) -> None:
+        monitor = GiftMonitor()
         animation_counter = 0
 
         while True:
@@ -66,6 +70,11 @@ class GiftMonitor:
             time.sleep(0.2)
 
             app.is_connected or await app.start()
+
+            # Проверка ежедневного уведомления
+            if monitor.scheduler.should_send_heartbeat():
+                await send_daily_heartbeat(app)
+                info("Отправлено ежедневное уведомление о работе бота")
 
             old_gifts = await GiftDetector.load_gift_history()
             current_gifts, gift_ids = await GiftDetector.fetch_current_gifts(app)

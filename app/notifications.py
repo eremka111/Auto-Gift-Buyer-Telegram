@@ -1,5 +1,7 @@
 from pyrogram import Client
 from pyrogram.errors import RPCError
+import time
+from datetime import datetime
 
 from app.utils.helper import get_user_balance, format_user_reference
 from app.utils.logger import error
@@ -93,8 +95,35 @@ class NotificationManager:
         summary_parts and await NotificationManager.send_message(
             app, t("telegram.skip_summary_header") + "\n" + "\n".join(summary_parts))
 
+    @staticmethod
+    async def send_daily_heartbeat(app: Client) -> None:
+        """Отправляет ежедневное уведомление о работе бота"""
+        current_time = datetime.now().strftime("%d.%m.%Y %H:%M")
+        balance = await get_user_balance(app)
+        
+        message = t("telegram.daily_heartbeat", 
+                   date=current_time,
+                   balance=balance)
+        
+        await NotificationManager.send_message(app, message)
+
+
+class DailyScheduler:
+    def __init__(self):
+        self.last_heartbeat_day = None
+    
+    def should_send_heartbeat(self) -> bool:
+        """Проверяет, нужно ли отправить ежедневное уведомление"""
+        current_day = datetime.now().strftime("%Y-%m-%d")
+        
+        if self.last_heartbeat_day != current_day:
+            self.last_heartbeat_day = current_day
+            return True
+        return False
+
 
 send_message = NotificationManager.send_message
 send_notification = NotificationManager.send_notification
 send_start_message = NotificationManager.send_start_message
 send_summary_message = NotificationManager.send_summary_message
+send_daily_heartbeat = NotificationManager.send_daily_heartbeat
